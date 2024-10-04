@@ -19,6 +19,11 @@ function App() {
     setTodo([...todo]);
 
   }
+  const startEditing = (index) => {
+    setEditingIndex(index);
+    setEditingValue(todo[index]);
+    input.current.value = todo[index]; // Show the current value in the input
+  };
 
   return (
     <>
@@ -32,6 +37,7 @@ function App() {
           todo.map((item, index) => (
             <li key={index}>
               {item}
+              <button onClick={() => startEditing(index)}>Edit</button>
               <button onClick={() => deleteTodo(index)}>Delete</button>
             </li>
           ))
