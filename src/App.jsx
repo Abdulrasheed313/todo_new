@@ -23,7 +23,7 @@ function App() {
     setEditingIndex(index);
     setEditingValue(todo[index]);
     input.current.value = todo[index]; // Show the current value in the input
-  };
+  }
 
   return (
     <>
